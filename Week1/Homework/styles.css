@@ -56,6 +56,11 @@ body {
   border: 1px solid var(--border);
 }
 
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
 .header-center {
   text-align: center;
   transform: translateY(2px);
