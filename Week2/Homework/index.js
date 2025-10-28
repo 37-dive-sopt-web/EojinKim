@@ -44,24 +44,37 @@ renderTable(data);
 // 필터링
 applyBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  const name = document.querySelector('#name').value.trim();
-  const englishName = document.querySelector('#englishName').value.trim();
-  const github = document.querySelector('#github').value.trim();
+  const name = document.querySelector('#name').value.trim().toLowerCase();
+  const englishName = document
+    .querySelector('#englishName')
+    .value.trim()
+    .toLowerCase();
+  const github = document.querySelector('#github').value.trim().toLowerCase();
   const gender = document.querySelector('#gender').value;
   const role = document.querySelector('#role').value;
   const group = document.querySelector('#codeReviewGroup').value.trim();
   const age = document.querySelector('#age').value.trim();
 
-  const filtered = data.filter(
-    (m) =>
-      (!name || m.name.includes(name)) &&
-      (!englishName || m.englishName.includes(englishName)) &&
-      (!github || m.github.includes(github)) &&
-      (!gender || m.gender === gender) &&
-      (!role || m.role === role) &&
-      (!group || m.codeReviewGroup == group) &&
-      (!age || m.age == age)
-  );
+  const filtered = data.filter((m) => {
+    const matchName = !name || m.name.toLowerCase().includes(name);
+    const matchEnglishName =
+      !englishName || m.englishName.toLowerCase().includes(englishName);
+    const matchGithub = !github || m.github.toLowerCase().includes(github);
+    const matchGender = !gender || m.gender === gender;
+    const matchRole = !role || m.role === role;
+    const matchGroup = !group || String(m.codeReviewGroup) === group;
+    const matchAge = !age || String(m.age) === age;
+
+    return (
+      matchName &&
+      matchEnglishName &&
+      matchGithub &&
+      matchGender &&
+      matchRole &&
+      matchGroup &&
+      matchAge
+    );
+  });
 
   renderTable(filtered);
 });
