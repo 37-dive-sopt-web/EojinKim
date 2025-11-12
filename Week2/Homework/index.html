@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -101,15 +101,31 @@
             </thead>
             <tbody></tbody>
           </table>
+
+          <!-- 데이터 없을 시 -->
+          <p id="noDataMessage" class="no-data hidden">데이터가 없습니다.</p>
         </div>
       </section>
     </main>
 
-    <div class="modal hidden" id="modal">
+    <div
+      class="modal hidden"
+      id="modal"
+      role="dialog"
+      aria-labelledby="modalTitle"
+      aria-modal="true"
+    >
       <div class="modal-backdrop" id="modalBackdrop"></div>
       <div class="modal-content">
-        <button type="button" class="modal-close" id="closeModal">✕</button>
-        <h3>멤버 추가</h3>
+        <button
+          type="button"
+          class="modal-close"
+          id="closeModal"
+          aria-label="모달 닫기"
+        >
+          ✕
+        </button>
+        <h3 id="modalTitle">멤버 추가</h3>
 
         <form id="modalForm" class="modal-form">
           <label>

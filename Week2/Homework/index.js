@@ -21,6 +21,16 @@ const filterForm = document.querySelector('#filter-form');
 // 테이블 렌더링
 function renderTable(list) {
   tableBody.innerHTML = '';
+
+  if (list.length === 0) {
+    // 데이터가 없을 경우
+    noDataMessage.classList.remove('hidden');
+    return;
+  }
+
+  // 데이터가 있을 경우
+  noDataMessage.classList.add('hidden');
+
   list.forEach((m) => {
     const tr = document.createElement('tr');
     tr.innerHTML = `
@@ -43,7 +53,6 @@ renderTable(data);
 
 // 필터링
 applyBtn.addEventListener('click', (e) => {
-  e.preventDefault();
   const name = document.querySelector('#name').value.trim().toLowerCase();
   const englishName = document
     .querySelector('#englishName')
@@ -81,9 +90,7 @@ applyBtn.addEventListener('click', (e) => {
 
 // 필터 초기화
 filterForm.addEventListener('reset', () => {
-  setTimeout(() => {
-    renderTable(data);
-  }, 0);
+  renderTable(data);
 });
 
 // 선택 삭제

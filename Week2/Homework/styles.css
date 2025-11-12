@@ -181,6 +181,17 @@ td {
   font-size: 0.9rem;
 }
 
+.no-data {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
 a.link {
   color: #f26289;
   text-decoration: none;
