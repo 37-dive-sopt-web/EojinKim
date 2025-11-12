@@ -1,0 +1,307 @@
+:root {
+  --main-color: #f2dce0;
+  --hover-color: #e0b6c1;
+  --border: #e0e0e0;
+  --text-main: #6d6365;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #fafafa;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+/* 헤더 */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--main-color);
+  height: 5.25rem;
+  padding: 0 2.5rem;
+}
+
+.header-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-left {
+  font-size: 1.5rem;
+}
+
+.header-right {
+  font-size: 0.875rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* 검색 필터 */
+.filter-section {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filter-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem 1.5rem;
+}
+
+.filter-grid > label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+input,
+select {
+  margin-top: 0.4rem;
+  padding: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  background: #fff;
+  color: var(--text-main);
+  appearance: auto;
+}
+
+.filter-grid > :nth-of-type(1),
+.filter-grid > :nth-of-type(2) {
+  grid-column: 1 / 7;
+}
+
+.filter-grid > :nth-of-type(3) {
+  grid-column: 1 / 3;
+}
+
+.filter-grid > :nth-of-type(4) {
+  grid-column: 3 / 5;
+}
+
+.filter-grid > :nth-of-type(5) {
+  grid-column: 5 / 7;
+}
+
+.filter-grid > :nth-of-type(6) {
+  grid-column: 1 / 4;
+}
+
+.filter-grid > :nth-of-type(7) {
+  grid-column: 4 / 7;
+}
+
+.button-area {
+  grid-column: 1 / 7;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+button {
+  flex: 1;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 0.625rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--main-color);
+  color: var(--text-main);
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: var(--hover-color);
+}
+
+/* 표 */
+.table-section {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.table-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.table-buttons button {
+  flex: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+thead {
+  background: #fbf4f5;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.no-data {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+a.link {
+  color: #f26289;
+  text-decoration: none;
+}
+
+a.link:hover {
+  text-decoration: underline;
+}
+
+/* 모달 */
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+.modal-close:hover {
+  background: transparent;
+  border-color: transparent;
+  color: var(--hover-color);
+  transform: scale(1.2);
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-form > label {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.modal-form input,
+.modal-form select {
+  margin-top: 0.4rem;
+  width: 100%;
+}
+
+.modal-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+.modal-form-row > label {
+  font-size: 0.9rem;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.modal-buttons button {
+  flex: none;
+  width: 4rem;
+  padding: 0.6rem 0;
+  border-radius: 0.5rem;
+  background: var(--main-color);
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.modal-buttons button:hover {
+  background: var(--hover-color);
+}
