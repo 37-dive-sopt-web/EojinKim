@@ -8,6 +8,7 @@ import { StepInfo } from '@/components/signup/StepInfo';
 
 import { validateId, validateInfo, validatePassword } from '@/utils/validation';
 import { postSignup } from '@/apis/auth';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -90,9 +91,10 @@ const SignUpPage = () => {
         <button
           type="button"
           onClick={handleBack}
-          className="text-[var(--color-primary)] text-2xl"
+          aria-label="뒤로가기"
+          className="p-2 -ml-2 rounded-full hover:bg-[var(--color-primary)]/10"
         >
-          ←
+          <ArrowLeftIcon className="w-5 h-5 text-[var(--color-primary)]" />
         </button>
 
         <h1 className="text-2xl font-semibold text-[var(--color-foreground)]">
