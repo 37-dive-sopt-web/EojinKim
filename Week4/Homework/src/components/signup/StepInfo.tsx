@@ -2,7 +2,7 @@ import { Input } from '@/components/common/Input';
 import { validateInfo } from '@/utils/validation';
 import type { StepInfoProps } from '@/types/auth';
 
-export const StepInfo = ({
+const StepInfo = ({
   name,
   email,
   age,
@@ -41,3 +41,5 @@ export const StepInfo = ({
     </div>
   );
 };
+
+export { StepInfo };

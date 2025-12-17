@@ -65,7 +65,7 @@ interface ButtonProps
   type?: 'button' | 'submit' | 'reset';
 }
 
-export const Button = ({
+const Button = ({
   className,
   variant,
   size,
@@ -81,3 +81,5 @@ export const Button = ({
     />
   );
 };
+
+export { Button };

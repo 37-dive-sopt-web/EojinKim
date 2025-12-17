@@ -80,4 +80,23 @@
   .page-container {
     @apply min-h-screen flex items-center justify-center px-6;
   }
+
+  .mypage-container {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 80px 20px;
+  }
+
+  .mypage-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .mypage-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 16px;
+  }
 }

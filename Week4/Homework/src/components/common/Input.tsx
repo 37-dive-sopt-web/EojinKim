@@ -8,7 +8,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   showPasswordToggle?: boolean;
 }
 
-export const Input = ({
+const Input = ({
   label,
   error,
   showPasswordToggle = false,
@@ -78,3 +78,5 @@ export const Input = ({
     </div>
   );
 };
+
+export { Input };

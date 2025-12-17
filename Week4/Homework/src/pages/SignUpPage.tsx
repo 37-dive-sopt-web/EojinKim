@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
 import { Button } from '@/components/common/Button';
 import { StepId } from '@/components/signup/StepId';
@@ -8,7 +9,6 @@ import { StepInfo } from '@/components/signup/StepInfo';
 
 import { validateId, validateInfo, validatePassword } from '@/utils/validation';
 import { postSignup } from '@/apis/auth';
-import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -149,4 +149,4 @@ const SignUpPage = () => {
   );
 };
 
-export { SignUpPage };
+export default SignUpPage;

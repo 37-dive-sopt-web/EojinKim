@@ -2,7 +2,7 @@ import { Input } from '@/components/common/Input';
 import { validateId } from '@/utils/validation';
 import type { StepIdProps } from '@/types/auth';
 
-export const StepId = ({ value, onChange }: StepIdProps) => {
+const StepId = ({ value, onChange }: StepIdProps) => {
   const idError = value.length > 0 ? validateId(value) : null;
 
   return (
@@ -18,3 +18,5 @@ export const StepId = ({ value, onChange }: StepIdProps) => {
     </div>
   );
 };
+
+export { StepId };

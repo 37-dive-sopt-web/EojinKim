@@ -2,7 +2,7 @@ import { Input } from '@/components/common/Input';
 import { validatePassword } from '@/utils/validation';
 import type { StepPasswordProps } from '@/types/auth';
 
-export const StepPassword = ({
+const StepPassword = ({
   password,
   confirmPassword,
   onChangePassword,
@@ -35,3 +35,5 @@ export const StepPassword = ({
     </div>
   );
 };
+
+export { StepPassword };
